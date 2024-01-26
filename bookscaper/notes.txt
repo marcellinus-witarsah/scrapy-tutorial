@@ -1,0 +1,14 @@
+1. Scrapper folder project:
+`scrapy startproject <project_name>`
+
+2. Python spider file for scraping:
+`scrapy genspider <python_filename> <utl_link>`
+
+3. Enable scrapy shell feature by inserting ipython into the scrapy.cfg.
+The purpose of this step is to test you selector in interactive way. How to do so?
+set connection to the url by running the `fetch('<url>')` command.
+
+4. Perform scrapping we can also go to other links within the website if there's another page.
+you can follow the link by using the response.follow() command
+
+5. 
