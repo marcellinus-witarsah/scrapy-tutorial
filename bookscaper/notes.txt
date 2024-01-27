@@ -11,4 +11,7 @@ set connection to the url by running the `fetch('<url>')` command.
 4. Perform scrapping we can also go to other links within the website if there's another page.
 you can follow the link by using the response.follow() command
 
-5. 
+5. Using Item object to set what data we want to return. 
+Pipelines used for cleaning data:
+a. You need to use adapter as interface to access and modify values without modifying the source code
+b. go to settings.py and enable the pipeline
