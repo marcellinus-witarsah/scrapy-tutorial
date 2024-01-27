@@ -15,3 +15,9 @@ you can follow the link by using the response.follow() command
 Pipelines used for cleaning data:
 a. You need to use adapter as interface to access and modify values without modifying the source code
 b. go to settings.py and enable the pipeline
+
+6. We can set where we want to save our data by go into the settings.py and add
+FEEDS = {
+    'data.json': {'format': 'json'}
+}
+
