@@ -16,12 +16,20 @@ FEEDS = {
     'data.json': {'format': 'json'}
 }
 
+SCRAPEOPS_API_KEY = 'cde8f610-7b41-43ad-9c8f-e36d02990f5f'
+SCRAPEOPS_FAKE_USER_AGENT_ENDPOINT = 'https://headers.scrapeops.io/v1/user-agents'
+SCRAPEOPS_FAKE_USER_AGENT_ENABLED = True
+SCRAPEOPS_NUM_RESULTS = 50
+
+SCRAPEOPS_FAKE_BROWSER_HEADER_ENDPOINT = 'https://headers.scrapeops.io/v1/browser-headers'
+SCRAPEOPS_FAKE_BROWSER_HEADER_ENABLED = True
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "bookscaper (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -54,9 +62,11 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
+DOWNLOADER_MIDDLEWARES = {
 #    "bookscaper.middlewares.BookscaperDownloaderMiddleware": 543,
-#}
+#    "bookscaper.middlewares.ScrapeOpsFakeUserAgentMiddleware": 400,
+   "bookscaper.middlewares.ScrapeOpsFakeBrowserHeaderAgentMiddleware": 400,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html

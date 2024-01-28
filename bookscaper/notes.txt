@@ -21,3 +21,14 @@ FEEDS = {
     'data.json': {'format': 'json'}
 }
 
+8. Some websites are able to detect if the same person/ agent perform multiple requests and block it.
+To go around that problem we need help from generated user agents, posing as different people performing
+requests so that we can scrape without any blocker.
+
+To do so you need to go to the settings.py and add multiple user agents (get from the scrapeops api) 
+and then add it to each header document inside the response.follow() function. Some websites requires
+use to change multiple header elements because they check the whole header not just the user agents.
+
+For configuring user agents we can use the middlewares.py
+1. Fetch user agent/ browser headers from the scrapeops api
+2. the main function that you need to add is the process_request() function
